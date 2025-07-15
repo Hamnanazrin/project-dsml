@@ -1,83 +1,31 @@
- Bank Marketing Term Deposit Prediction:
-This project uses the Bank Marketing Dataset from the UCI Machine Learning Repository to predict whether a client will subscribe to a term deposit (y = 1). It explores relationships between customer demographics, campaign features, and past interactions with the bank using exploratory data analysis and machine learning models.
+# 🏦 Bank Marketing Term Deposit Prediction
 
-📊 Dataset
-Source: UCI Bank Marketing Dataset
+This project analyzes customer data to predict whether a client will subscribe to a term deposit using the Bank Marketing Dataset from the UCI repository.
 
-Records: 45,211
+## 📊 Dataset
+- **Source**: [UCI Bank Marketing Dataset](https://archive.ics.uci.edu/dataset/222/bank+marketing)
+- **Records**: 45,211
+- **Target**: `y` (1 = subscribed, 0 = not subscribed)
 
-Features: Age, job, marital status, education, default status, balance, housing, loan, contact type, month, campaign, previous outcomes, etc.
+## 🔧 Key Steps
+- Cleaned and encoded categorical data
+- Created grouped features (age, balance, campaign)
+- Visualized patterns (job type, age vs subscription, correlation matrix)
+- Scaled numeric data for modeling
 
-Target: y — whether the client subscribed to a term deposit (1 = yes, 0 = no)
+## 🤖 Models Used
+- Logistic Regression
+- Random Forest
+- SVM
+- XGBoost
 
-🔧 Key Steps
-Data Preprocessing
-Removed duplicates
+**Best Models**: XGBoost, Random Forest  
+**Top Metric**: ROC-AUC up to ~0.91
 
-Mapped binary categorical variables (yes/no) to 1/0
+## 📁 Files
+- `BankMarketingCSV.csv` – Dataset  
+- `bank_marketing_analysis.ipynb` – Full Colab notebook  
+- `README.md` – Project overview
 
-One-hot encoded categorical variables (job, marital, education, contact, month, poutcome)
-
-Created custom categorical groupings:
-
-age_group: Binned age into 5 groups
-
-balance_category: Negative, Low, Medium, High
-
-campaign_intensity: Binned campaign frequency
-
-Feature Engineering
-One-hot encoding of new grouped features
-
-Standardized numerical features using StandardScaler
-
-Data Visualization
-Distribution of term deposit subscriptions
-
-Boxplot of age by subscription status
-
-Subscription rate by job type
-
-Correlation heatmap
-
-🤖 Modeling
-Algorithms Used
-Logistic Regression
-
-Random Forest
-
-Support Vector Machine (SVM)
-
-XGBoost Classifier
-
-Evaluation Metrics
-Classification Report (Precision, Recall, F1-score)
-
-Confusion Matrix
-
-ROC-AUC Score
-
-Model	ROC-AUC Score
-Logistic Regression	~0.77
-Random Forest	~0.90
-SVM	~0.88
-XGBoost	~0.91
-
-🧠 Results
-Best Models: XGBoost and Random Forest
-
-Top Features: Contact type, month of campaign, job type, campaign frequency
-
-Insights: Clients contacted via cellular in months like May and August had higher subscription rates.
-
-📁 Project Structure
-bash
-Copy
-Edit
-bank_marketing_prediction/
-│
-├── BankMarketingCSV.csv           # Dataset
-├── bank_marketing_analysis.ipynb  # Colab notebook with full pipeline
-├── README.md                      # Project overview (this file)
-🔗 Colab Notebook
-👉 View Full Project in Google Colab
+## 🔗 Colab Notebook
+👉 [Open in Colab](https://colab.research.google.com/drive/1-6GKQyyvsAw9z7lm8NXTXsQfTU3sCv84?usp=sharing)
